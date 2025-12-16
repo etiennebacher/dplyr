@@ -22,7 +22,7 @@
 <meta property="og:description" content="A fast, consistent tool for working with data frame like objects, both in memory and out of memory.">
 <meta property="og:image" content="https://dplyr.tidyverse.org/logo.png">
 <meta name="robots" content="noindex">
-<script defer data-domain="dplyr.tidyverse.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script><script async src="https://widget.kapa.ai/kapa-widget.bundle.js" data-button-hide="true" data-modal-disclaimer="This is a custom LLM for answering questions about dplyr, tidyr, and ggplot2. Answers are based on the contents of the documentation. Rate the answers to let us know what you think!" data-modal-ask-ai-input-placeholder="Ask me a question about dplyr, tidyr, or ggplot2." data-modal-header-bg-color="#f9f9f9" data-modal-override-open-class="open-kapa-widget" data-project-color="#365a7a" data-project-name="dplyr" data-modal-title="tidyverse AI ✨" data-project-logo="https://avatars.githubusercontent.com/u/22032646?s=200&amp;u=235532df5cf8543246812f73db051b793f868807&amp;v=4" data-user-analytics-fingerprint-enabled="true" data-bot-protection-mechanism="hcaptcha" data-website-id="44ae76c6-2ae5-4899-ab42-de9f17f07c7b"></script>
+<script src="https://cdn.jsdelivr.net/gh/posit-dev/supported-by-posit/js/badge.min.js" data-max-height="43" data-hide-below="1200" data-light-bg="#666f76" data-light-fg="#f9f9f9"></script><script defer data-domain="dplyr.tidyverse.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script><script async src="https://widget.kapa.ai/kapa-widget.bundle.js" data-button-hide="true" data-modal-disclaimer="This is a custom LLM for answering questions about dplyr, tidyr, and ggplot2. Answers are based on the contents of the documentation. Rate the answers to let us know what you think!" data-modal-ask-ai-input-placeholder="Ask me a question about dplyr, tidyr, or ggplot2." data-modal-header-bg-color="#f9f9f9" data-modal-override-open-class="open-kapa-widget" data-project-color="#365a7a" data-project-name="dplyr" data-modal-title="tidyverse AI ✨" data-project-logo="https://avatars.githubusercontent.com/u/22032646?s=200&amp;u=235532df5cf8543246812f73db051b793f868807&amp;v=4" data-user-analytics-fingerprint-enabled="true" data-bot-protection-mechanism="hcaptcha" data-website-id="44ae76c6-2ae5-4899-ab42-de9f17f07c7b"></script>
 </head>
 <body>
     <a href="#container" class="visually-hidden-focusable">Skip to content</a>
@@ -119,11 +119,10 @@
 </h2>
 <p>In addition to data frames/tibbles, dplyr makes working with other computational backends accessible and efficient. Below is a list of alternative backends:</p>
 <ul>
-<li><p><a href="https://arrow.apache.org/docs/r/" class="external-link">arrow</a> for larger-than-memory datasets, including on remote cloud storage like AWS S3, using the Apache Arrow C++ engine, <a href="https://arrow.apache.org/docs/cpp/streaming_execution.html" class="external-link">Acero</a>.</p></li>
-<li><p><a href="https://dtplyr.tidyverse.org/" class="external-link">dtplyr</a> for large, in-memory datasets. Translates your dplyr code to high performance <a href="https://rdatatable.gitlab.io/data.table/" class="external-link">data.table</a> code.</p></li>
+<li><p><a href="https://arrow.apache.org/docs/r/" class="external-link">arrow</a> for larger-than-memory datasets, including on remote cloud storage like AWS S3, using the Apache Arrow C++ engine, <a href="https://arrow.apache.org/docs/cpp/acero/overview.html" class="external-link">Acero</a>.</p></li>
 <li><p><a href="https://dbplyr.tidyverse.org/" class="external-link">dbplyr</a> for data stored in a relational database. Translates your dplyr code to SQL.</p></li>
-<li><p><a href="https://tidyverse.github.io/duckplyr/" class="external-link">duckplyr</a> for using <a href="https://duckdb.org" class="external-link">duckdb</a> on large, in-memory datasets with zero extra copies. Translates your dplyr code to high performance duckdb queries with an automatic R fallback when translation isn’t possible.</p></li>
-<li><p><a href="https://duckdb.org/docs/api/r" class="external-link">duckdb</a> for large datasets that are still small enough to fit on your computer.</p></li>
+<li><p><a href="https://dtplyr.tidyverse.org/" class="external-link">dtplyr</a> for large, in-memory datasets. Translates your dplyr code to high performance <a href="https://rdatatable.gitlab.io/data.table/" class="external-link">data.table</a> code.</p></li>
+<li><p><a href="https://duckplyr.tidyverse.org/" class="external-link">duckplyr</a> for large, in-memory datasets. Translates your dplyr code to high performance <a href="https://duckdb.org" class="external-link">duckdb</a> queries with zero extra copies and an automatic R fallback when translation isn’t possible.</p></li>
 <li><p><a href="https://spark.rstudio.com" class="external-link">sparklyr</a> for very large datasets stored in <a href="https://spark.apache.org" class="external-link">Apache Spark</a>.</p></li>
 </ul>
 </div>
@@ -156,7 +155,7 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span><span class="va">starwars</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Droid"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 6 × 14</span></span>
 <span><span class="co">#&gt;   name   height  mass hair_color skin_color  eye_color birth_year sex   gender  </span></span>
@@ -170,7 +169,7 @@
 <span><span class="co">#&gt; # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span>
 <span><span class="co">#&gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span>
 <span></span>
-<span><span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span><span class="va">starwars</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">ends_with</a></span><span class="op">(</span><span class="st">"color"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 87 × 4</span></span>
 <span><span class="co">#&gt;   name           hair_color skin_color  eye_color</span></span>
@@ -182,8 +181,8 @@
 <span><span class="co">#&gt; 5 Leia Organa    brown      light       brown    </span></span>
 <span><span class="co">#&gt; # ℹ 82 more rows</span></span>
 <span></span>
-<span><span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">name</span>, bmi <span class="op">=</span> <span class="va">mass</span> <span class="op">/</span> <span class="op">(</span><span class="op">(</span><span class="va">height</span> <span class="op">/</span> <span class="fl">100</span><span class="op">)</span>  <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="va">starwars</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">name</span>, bmi <span class="op">=</span> <span class="va">mass</span> <span class="op">/</span> <span class="op">(</span><span class="op">(</span><span class="va">height</span> <span class="op">/</span> <span class="fl">100</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span><span class="op">:</span><span class="va">mass</span>, <span class="va">bmi</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 87 × 4</span></span>
 <span><span class="co">#&gt;   name           height  mass   bmi</span></span>
@@ -195,7 +194,7 @@
 <span><span class="co">#&gt; 5 Leia Organa       150    49  21.8</span></span>
 <span><span class="co">#&gt; # ℹ 82 more rows</span></span>
 <span></span>
-<span><span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span><span class="va">starwars</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="reference/desc.html">desc</a></span><span class="op">(</span><span class="va">mass</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 87 × 14</span></span>
 <span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
@@ -209,12 +208,12 @@
 <span><span class="co">#&gt; # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span>
 <span><span class="co">#&gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span>
 <span></span>
-<span><span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="va">starwars</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/summarise.html">summarise</a></span><span class="op">(</span></span>
 <span>    n <span class="op">=</span> <span class="fu"><a href="reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">mass</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/filter.html">filter</a></span><span class="op">(</span></span>
 <span>    <span class="va">n</span> <span class="op">&gt;</span> <span class="fl">1</span>,</span>
 <span>    <span class="va">mass</span> <span class="op">&gt;</span> <span class="fl">50</span></span>
@@ -297,7 +296,7 @@
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=dplyr" class="external-link"><img src="https://www.r-pkg.org/badges/version/dplyr" alt="CRAN status"></a></li>
 <li><a href="https://github.com/tidyverse/dplyr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/tidyverse/dplyr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://app.codecov.io/gh/tidyverse/dplyr?branch=main" class="external-link"><img src="https://codecov.io/gh/tidyverse/dplyr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/tidyverse/dplyr" class="external-link"><img src="https://codecov.io/gh/tidyverse/dplyr/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
@@ -312,7 +311,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
   </div></footer>

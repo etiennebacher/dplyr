@@ -19,7 +19,6 @@
 <url><loc>https://dplyr.tidyverse.org/dev/index.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/news/index.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/across.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/add_rownames.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/all_equal.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/all_vars.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/args_by.html</loc></url>
@@ -32,11 +31,10 @@
 <url><loc>https://dplyr.tidyverse.org/dev/reference/bind_cols.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/bind_rows.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/c_across.html</loc></url>
+<url><loc>https://dplyr.tidyverse.org/dev/reference/case-and-replace-when.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/case_match.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/case_when.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/check_dbplyr.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/coalesce.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/combine.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/common_by.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/compute.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/consecutive_id.html</loc></url>
@@ -98,6 +96,7 @@
 <url><loc>https://dplyr.tidyverse.org/dev/reference/pick.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/progress_estimated.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/pull.html</loc></url>
+<url><loc>https://dplyr.tidyverse.org/dev/reference/recode-and-replace-values.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/recode.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/reexports.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/reframe.html</loc></url>
@@ -116,8 +115,6 @@
 <url><loc>https://dplyr.tidyverse.org/dev/reference/slice.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/sql.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/src.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/src_dbi.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/src_local.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/src_tbls.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/starwars.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/storms.html</loc></url>
@@ -125,13 +122,13 @@
 <url><loc>https://dplyr.tidyverse.org/dev/reference/summarise_all.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/summarise_each.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/tbl.html</loc></url>
-<url><loc>https://dplyr.tidyverse.org/dev/reference/tbl_df.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/tbl_ptype.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/tbl_vars.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/tidyeval-compat.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/top_n.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/transmute.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/vars.html</loc></url>
+<url><loc>https://dplyr.tidyverse.org/dev/reference/when-any-all.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/with_groups.html</loc></url>
 <url><loc>https://dplyr.tidyverse.org/dev/reference/with_order.html</loc></url>
 </urlset>
