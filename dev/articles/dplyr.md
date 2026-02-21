@@ -29,7 +29,7 @@ learn more.
 
 To explore the basic data manipulation verbs of dplyr, we’ll use the
 dataset `starwars`. This dataset contains 87 characters and comes from
-the [Star Wars API](https://swapi.dev), and is documented in
+the [Star Wars API](https://swapi.py4e.com/), and is documented in
 [`?starwars`](https://dplyr.tidyverse.org/dev/reference/starwars.md)
 
 ``` r
@@ -515,7 +515,8 @@ at once. You either have to do it step-by-step:
 ``` r
 a1 <- group_by(starwars, species, sex)
 a2 <- select(a1, height, mass)
-a3 <- summarise(a2,
+a3 <- summarise(
+  a2,
   height = mean(height, na.rm = TRUE),
   mass = mean(mass, na.rm = TRUE)
 )
@@ -528,7 +529,8 @@ the function calls inside each other:
 summarise(
   select(
     group_by(starwars, species, sex),
-    height, mass
+    height,
+    mass
   ),
   height = mean(height, na.rm = TRUE),
   mass = mean(mass, na.rm = TRUE)

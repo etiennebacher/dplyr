@@ -33,6 +33,10 @@ These functions have two mutually exclusive ways to use them:
   have a pre-built lookup table (which may come from an external source,
   like a CSV file).
 
+See
+[`vignette("recoding-replacing")`](https://dplyr.tidyverse.org/dev/articles/recoding-replacing.md)
+for more examples.
+
 ## Usage
 
 ``` r
@@ -284,6 +288,31 @@ data |>
 #> 7 Neutral          
 #> 8 Strongly disagree
 #> 9 Agree            
+
+# You can utilize the same lookup table across multiple columns by using
+# `across()`
+data_months <- tibble(
+  score_january = c(1, 2, 3, 4, 5, 2, 3, 1, 4),
+  score_february = c(4, 2, 1, 2, 1, 5, 2, 4, 4)
+)
+
+data_months |>
+  mutate(across(
+    starts_with("score"),
+    ~ recode_values(.x, from = likert$from, to = likert$to)
+  ))
+#> # A tibble: 9 × 2
+#>   score_january     score_february   
+#>   <chr>             <chr>            
+#> 1 Strongly disagree Agree            
+#> 2 Disagree          Disagree         
+#> 3 Neutral           Strongly disagree
+#> 4 Agree             Disagree         
+#> 5 Strongly agree    Strongly disagree
+#> 6 Disagree          Strongly agree   
+#> 7 Neutral           Disagree         
+#> 8 Strongly disagree Agree            
+#> 9 Agree             Agree            
 
 # The `unmatched` argument allows you to assert that you believe that you've
 # recoded all of the cases and will error if you've missed one, adding an

@@ -34,7 +34,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">dplyr</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.4.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/grouping.html">Grouped data</a></li>
     <li><a class="dropdown-item" href="../articles/two-table.html">Two-table verbs</a></li>
+    <li><a class="dropdown-item" href="../articles/recoding-replacing.html">Recoding columns and replacing values</a></li>
     <li><a class="dropdown-item" href="../articles/base.html">dplyr &lt;-&gt; base R</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Automation</h6></li>
@@ -64,13 +65,14 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-news" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">News</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-news">
 <li><h6 class="dropdown-header" data-toc-skip>Releases</h6></li>
+    <li><a class="external-link dropdown-item" href="https://tidyverse.org/blog/2026/02/dplyr-1-2-0/">Version 1.2.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/tags/dplyr-1-1-0/">Version 1.1.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/">Version 1.0.0</a></li>
-    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/articles/2019/07/dplyr-0-8-3/">Version 0.8.3</a></li>
-    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/articles/2019/06/dplyr-0-8-2/">Version 0.8.2</a></li>
-    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/articles/2019/05/dplyr-0-8-1/">Version 0.8.1</a></li>
-    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/articles/2019/02/dplyr-0-8-0/">Version 0.8.0</a></li>
-    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/articles/2018/06/dplyr-0.7.5/">Version 0.7.5</a></li>
+    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2019/07/dplyr-0-8-3/">Version 0.8.3</a></li>
+    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2019/06/dplyr-0-8-2/">Version 0.8.2</a></li>
+    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2019/05/dplyr-0-8-1/">Version 0.8.1</a></li>
+    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2019/02/dplyr-0-8-0/">Version 0.8.0</a></li>
+    <li><a class="external-link dropdown-item" href="https://www.tidyverse.org/blog/2018/06/dplyr-0.7.5/">Version 0.7.5</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="../news/index.html">Changelog</a></li>
   </ul>
@@ -270,7 +272,7 @@ feature in the <code>NAMESPACE</code> file: you can include raw
 variants were deprecated in dplyr 0.7.0:</p>
 <ul>
 <li>
-<code><a href="../reference/summarise_each.html">mutate_each()</a></code>, <code><a href="../reference/summarise_each.html">summarise_each()</a></code>
+<code><a href="../reference/defunct-each.html">mutate_each()</a></code>, <code><a href="../reference/defunct-each.html">summarise_each()</a></code>
 </li>
 </ul>
 <p>and the following variants were superseded in dplyr 1.0.0:</p>
@@ -282,18 +284,18 @@ variants were deprecated in dplyr 0.7.0:</p>
 <p>These have all been replaced by using <code><a href="../reference/mutate.html">mutate()</a></code> or
 <code><a href="../reference/summarise.html">summarise()</a></code> in combination with <code><a href="../reference/across.html">across()</a></code>,
 which was introduced in dplyr 1.0.0.</p>
-<p>If you used <code><a href="../reference/mutate_all.html">mutate_all()</a></code> or <code><a href="../reference/summarise_each.html">mutate_each()</a></code>
+<p>If you used <code><a href="../reference/mutate_all.html">mutate_all()</a></code> or <code><a href="../reference/defunct-each.html">mutate_each()</a></code>
 without supplying a selection, you should update to use
 <code>across(everything())</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/summarise_each.html">mutate_each</a></span><span class="op">(</span><span class="fu"><a href="../reference/funs.html">funs</a></span><span class="op">(</span><span class="va">as.character</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/defunct-each.html">mutate_each</a></span><span class="op">(</span><span class="fu"><a href="../reference/funs.html">funs</a></span><span class="op">(</span><span class="va">as.character</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/mutate_all.html">mutate_all</a></span><span class="op">(</span><span class="fu"><a href="../reference/funs.html">funs</a></span><span class="op">(</span><span class="va">as.character</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="../reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>If you provided a selection through <code><a href="../reference/mutate_all.html">mutate_at()</a></code> or
-<code><a href="../reference/summarise_each.html">mutate_each()</a></code>, then you can switch to <code><a href="../reference/across.html">across()</a></code>
+<code><a href="../reference/defunct-each.html">mutate_each()</a></code>, then you can switch to <code><a href="../reference/across.html">across()</a></code>
 with a selection:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/summarise_each.html">mutate_each</a></span><span class="op">(</span><span class="fu"><a href="../reference/funs.html">funs</a></span><span class="op">(</span><span class="va">as.character</span><span class="op">)</span>, <span class="va">height</span>, <span class="va">mass</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/defunct-each.html">mutate_each</a></span><span class="op">(</span><span class="fu"><a href="../reference/funs.html">funs</a></span><span class="op">(</span><span class="va">as.character</span><span class="op">)</span>, <span class="va">height</span>, <span class="va">mass</span><span class="op">)</span></span>
 <span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/mutate_all.html">mutate_at</a></span><span class="op">(</span><span class="fu"><a href="../reference/vars.html">vars</a></span><span class="op">(</span><span class="va">height</span>, <span class="va">mass</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span></span>
 <span><span class="va">starwars</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="../reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">height</span>, <span class="va">mass</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>If you used predicates with <code><a href="../reference/mutate_all.html">mutate_if()</a></code>, you can switch
